@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <title><%= title%></title>
+    <%- style%>
   </head>
   <body>
-    <h1>Codeial / <%= title%></h1>
+    <%- include('_header')%> <%- body%> <%- include('_footer')%> <%- script%>
   </body>
 </html>
