@@ -28,10 +28,7 @@ module.exports.create = async function (req, res) {
     console.log(user);
     if (!user) {
       const userCreate = User.create(req.body);
-      console.log(userCreate);
-      console.log(req.body);
       if (userCreate) {
-        console.log("hello");
         return res.redirect("/users/sign-in");
       }
     } else {
@@ -43,3 +40,29 @@ module.exports.create = async function (req, res) {
 };
 
 //get sign in data
+
+module.exports.createSession = async function (req, res) {
+  try {
+    console.log(req.body.email);
+    const user = await User.findOne({ email: req.body.email }).exec();
+
+    if (!user) {
+      console.log("User not found");
+      return res.redirect("back");
+    }
+
+    if (user.password !== req.body.password) {
+      console.log("Incorrect password");
+      console.log(user.password, req.body.password);
+      return res.redirect("back");
+    }
+
+    // handle session creation
+    res.cookie("user_id", user.id);
+    console.log("User authenticated, redirecting to profile page");
+    return res.redirect("/users/profile");
+  } catch (err) {
+    console.log("Error in finding user during sign-in: ", err);
+    return res.redirect("back");
+  }
+};
