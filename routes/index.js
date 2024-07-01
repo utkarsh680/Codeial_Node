@@ -11,6 +11,4 @@ router.use("/users", require("./users"));
 router.use("/users", require("./posts"));
 
 
-
-
 module.exports = router;
