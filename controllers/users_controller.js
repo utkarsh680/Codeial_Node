@@ -5,7 +5,7 @@ module.exports.profile = async function (req, res) {
       const user = await User.findById(req.cookies.user_id);
 
       if (!user) {
-        console.log("return to singh")
+        console.log("return to singh");
         return res.redirect("/users/sign-in");
       }
       return res.render("user_profile", {
@@ -31,8 +31,6 @@ module.exports.signIn = function (req, res) {
 
 // get the sign up data
 module.exports.create = async function (req, res) {
-  console.log(req.body.email, req.body.password, req.body.confirm_password);
-
   if (req.body.password != req.body.confirm_password) {
     return res.redirect("back");
   }
@@ -56,7 +54,6 @@ module.exports.create = async function (req, res) {
 
 module.exports.createSession = async function (req, res) {
   try {
-    console.log(req.body.email);
     const user = await User.findOne({ email: req.body.email }).exec();
 
     if (!user) {
@@ -73,6 +70,16 @@ module.exports.createSession = async function (req, res) {
     return res.redirect("/users/profile");
   } catch (err) {
     console.log("Error in finding user during sign-in: ", err);
+    return res.redirect("back");
+  }
+};
+
+module.exports.destroySession = function (req, res) {
+  try {
+    res.clearCookie("user_id"); // Clear the session cookie
+    return res.redirect("/"); // Redirect to the homepage or login page
+  } catch (err) {
+    console.log("Error in destroying session: ", err);
     return res.redirect("back");
   }
 };

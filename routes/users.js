@@ -14,4 +14,6 @@ router.post("/create", usersController.create);
 
 router.post("/create-session", usersController.createSession);
 
+router.get('/destroy-session', usersController.destroySession);
+
 module.exports = router;
