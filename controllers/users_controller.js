@@ -18,8 +18,6 @@ module.exports.signIn = function (req, res) {
 
 // get the sign up data
 module.exports.create = async function (req, res) {
-  console.log(req.body.email, req.body.password, req.body.confirm_password);
-
   if (req.body.password != req.body.confirm_password) {
     return res.redirect("back");
   }
@@ -42,4 +40,7 @@ module.exports.create = async function (req, res) {
   }
 };
 
-//get sign in data
+//sign in and create session for user
+module.exports.createSession = async function (req, res) {
+  return res.redirect("/");
+};
