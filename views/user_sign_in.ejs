@@ -1,7 +1,68 @@
-<div class="sign-in-form">
-  <form action="/users/create-session" method="POST" class="form">
-    <input type="email" name="email" placeholder="email" />
-    <input type="password" name="password" placeholder="password" />
-    <button>submit</button>
-  </form>
+<link rel="stylesheet" href="/css/user_sign_in.css" />
+
+<div class="sign-in-placement" id="signinContainer">
+  <div class="sign-in">
+    <p>
+      Welcome,
+      <span> Ready to Aboard?</span>
+    </p>
+  </div>
+  <div class="sign-in-form">
+    <form action="/users/create-session" method="POST" class="form">
+      <div class="grid-margin">
+        <div class="email-input">
+          <input type="email" name="email" placeholder="Your Email" required />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+            alt="email"
+          />
+        </div>
+        <div class="password-input">
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+            id="id_password"
+          />
+          <!-- <i class="fa-regular fa-eye" id="togglePassword"></i> -->
+
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/8882/8882850.png"
+            alt="icon"
+          />
+          <i class="far fa-eye" id="togglePassword"></i>
+        </div>
+        <!-- <div class="forgotPassword">
+          <a href="/users/forgotPasswordRender">Forget password?</a>
+        </div> -->
+        <div class="submit-button">
+          <button>Sign In</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="checkout">
+    <p>Checkout other options</p>
+  </div>
+
+  <!-- <div class="gfg-icon">
+    <a href="/users/auth/google" class="google"
+      ><img
+        src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+        alt="google"
+    /></a>
+    <a href="/users/auth/github" class="github" style="text-decoration: none"
+      ><i class="fa-brands fa-github"></i>
+    </a>
+  </div> -->
+  <div class="create-account">
+    or Create an Account
+    <span>
+      <a href="/users/sign-up"
+        >&nbsp; Sign up <i class="fa-solid fa-arrow-right"></i
+      ></a>
+    </span>
+  </div>
 </div>
+<script src="/js/sign-in-password-eye.js"></script>

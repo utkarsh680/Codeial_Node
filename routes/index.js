@@ -8,7 +8,7 @@ router.get("/", homeController.home);
 
 router.use("/users", require("./users"));
 
-router.use("/users", require("./posts"));
+router.use("/posts", require("./posts"));
 
 
 module.exports = router;

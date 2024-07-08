@@ -1,19 +1,131 @@
-<div class="form">
-  <form action="/users/create" method="post" class="sign-up-form">
-    <input type="text" name="name" placeholder="your name" required />
-    <input type="email" name="email" placeholder="your email" required />
-    <input
-      type="password"
-      name="password"
-      placeholder="your password"
-      required
-    />
-    <input
-      type="password"
-      name="confirm_password"
-      placeholder="confirm password"
-      required
-    />
-    <button>sign-up</button>
-  </form>
+<link rel="stylesheet" href="/css/user_sign_up.css" />
+
+<div class="sign-up-placement">
+  <div class="sign-up-box">
+    <div class="left">
+      <div class="sign-up-text">
+        <h1>Sign Up</h1>
+        <p>
+          Enter Details to continue
+          <span><i class="fa-solid fa-arrow-right"></i></span>
+        </p>
+      </div>
+      <form action="/users/create" method="POST" class="sign-up-form">
+        <div id="grid-margin">
+          <div id="text-input">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+              alt="email"
+            />
+          </div>
+          <div id="email-input">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+              alt="email"
+            />
+          </div>
+          <div id="password-input">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+              id="password"
+              class="password-input"
+            />
+            <i class="far fa-eye" id="show-password"></i>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/8882/8882850.png"
+              alt="email"
+            />
+          </div>
+          <div id="confirm-password-input">
+            <input
+              type="password"
+              name="confirm_password"
+              placeholder="Confirm Password"
+              required
+              id="confirm-password"
+              class="password-input"
+            />
+            <i class="far fa-eye" id="show-confirm-password"></i>
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/8882/8882850.png"
+              alt="email"
+            />
+          </div>
+          <div id="submit-input">
+            <button id="btnSubmit">Sign up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="checkout-other">
+      <p>Checkout other options</p>
+    </div>
+    <div class="create-account">
+      Already Registered?
+      <span>
+        <a href="/users/sign-in"
+          >&nbsp; Sign in <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </span>
+    </div>
+    <div class="right">
+      <div class="checkout">
+        <p class="text1">You are Signed Out</p>
+        <p class="text2">Sign in to get the best experience</p>
+      </div>
+
+      <div id="gfg-icon">
+        <div>
+          <a id="email" href="/users/sign-in"
+            ><i class="fa-solid fa-envelope"></i>
+            <p>Continue with email</p>
+          </a>
+        </div>
+        <div>
+          <a href="/users/auth/google" id="google" style="text-decoration: none"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
+              alt="google"
+            />
+            <p>Continue with Google</p>
+          </a>
+        </div>
+
+        <div>
+          <a id="github" href="/users/auth/github" style="text-decoration: none"
+            ><i class="fa-brands fa-github"></i>
+            <p>Continue with github</p>
+          </a>
+        </div>
+      </div>
+      <div class="Already-account">
+        Already have an account?
+        <span>
+          <a href="/users/sign-in" style="text-decoration: none"
+            >&nbsp; Sign in<i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </span>
+      </div>
+      <div id="create-account">
+        <p style="height: 20px; width: 25vw; text-align: center">
+          By continuing, you agree to Codeial
+          <span style="color: white; font-weight: bold">Terms of Service</span>
+          and acknkowledge that you've read our
+          <span style="color: white; font-weight: bold">Privacy Policy.</span>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script src="/js/password-eyes.js"></script>

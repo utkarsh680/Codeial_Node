@@ -1,0 +1,274 @@
+input {
+  caret-color: red;
+}
+
+input :-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+body {
+  overflow: hidden;
+}
+
+.sign-in-placement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 80vw;
+}
+
+.sign-in-placement .sign-in {
+  margin-left: 30px;
+}
+
+.sign-in-placement .sign-in p {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  font-size: 40px;
+  font-family: cursive;
+  font-weight: 700;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.sign-in-placement .sign-in p span {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin-top: -4px;
+  font-size: 40px;
+  font-weight: 600;
+  word-wrap: break-word;
+  transition: all 0.4s ease;
+}
+
+.sign-in-placement .sign-in-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+  width: 40%;
+  transition: all 0.4s ease;
+}
+
+.sign-in-placement .sign-in-form .grid-margin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.sign-in-placement .sign-in-form .grid-margin input::placeholder {
+  color: grey;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .email-input {
+  display: flex;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .email-input input {
+  display: flex;
+  padding: 15px 0px 15px 55px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #212121;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .email-input img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  margin-left: 14px;
+  margin-top: 10px;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .password-input {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .password-input img {
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  left: 14px;
+  top: 10px;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .password-input input {
+  display: flex;
+  padding: 15px 0px 15px 55px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #212121;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .password-input i {
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  right: 20px;
+  top: 14px;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .forgotPassword {
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 8px;
+  margin-right: 5px;
+  align-self: flex-end;
+  font-weight: 500;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .forgotPassword a {
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .forgotPassword a:hover {
+  transition: all 0.3s ease;
+  color: #388df5;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .forgotPassword a:active {
+  color: green;
+}
+
+.sign-in-placement .sign-in-form .grid-margin .submit-button button {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(130deg, #1277f3 0%, #0b4995 97%);
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 550;
+  font-family: sans-serif;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.sign-in-placement .sign-in-form .grid-margin button:hover {
+  background: linear-gradient(130deg, #0b6be0 0%, #0b3364 97%);
+}
+
+.sign-in-placement .checkout {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+  color: lightgray;
+}
+
+.sign-in-placement .gfg-icon {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sign-in-placement .gfg-icon .google {
+  height: 50px;
+  width: 55px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-placement .gfg-icon .google img {
+  height: 25px;
+  width: 25px;
+}
+
+.sign-in-placement .gfg-icon .github {
+  height: 50px;
+  width: 55px;
+  background-color: #353434;
+  border: 1px solid #353434;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.sign-in-placement .gfg-icon .github i {
+  font-size: 25px;
+  color: white;
+}
+
+.sign-in-placement .create-account {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  color: lightgray;
+}
+
+.sign-in-placement .create-account span a {
+  font-weight: 700;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #0b4995;
+  transition: all 0.3s ease;
+}
+
+.sign-in-placement .create-account span a:hover {
+  color: #1277f3;
+}
+
+.sign-in-placement .create-account span a:active {
+  color: green;
+}
+
+@media screen and (max-width: 800px) {
+  .sign-in-placement {
+    width: 100vw;
+  }
+  .sign-in-placement .sign-in {
+    margin-left: 0px;
+  }
+  .sign-in-placement .sign-in p {
+    font-size: 30px;
+  }
+  .sign-in-placement .sign-in p span {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .sign-in-placement {
+    margin-top: 10px;
+  }
+  .sign-in-placement .sign-in-form {
+    width: 70%;
+  }
+  .sign-in-placement .sign-in-form .grid-margin .email-input img {
+    width: 24px;
+    height: 24px;
+  }
+  .sign-in-placement .sign-in-form .grid-margin .password-input img {
+    width: 25px;
+    height: 25px;
+  }
+  .sign-in-placement .sign-in-form .grid-margin .submit-button button {
+    padding: 13px 0px;
+  }
+}

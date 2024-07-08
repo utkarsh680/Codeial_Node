@@ -1,0 +1,580 @@
+input {
+  caret-color: red;
+}
+
+input :-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+link {
+  margin: 0;
+  padding: 0;
+}
+
+.sign-up-placement {
+  margin-top: -50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 80vw;
+}
+
+.sign-up-placement .sign-up-box {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  height: 430px;
+  width: 100%;
+}
+
+.sign-up-placement .sign-up-box .left {
+  position: relative;
+  width: 45%;
+}
+
+.sign-up-placement .sign-up-box .left .sign-up-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  font-family: cursive;
+}
+
+.sign-up-placement .sign-up-box .left .sign-up-text h1 {
+  color: white;
+}
+
+.sign-up-placement .sign-up-box .left .sign-up-text p {
+  font-weight: 500;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: -5px;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin input::placeholder {
+  color: grey;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #text-input {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #text-input img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 18px;
+  top: 10px;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #text-input input {
+  display: flex;
+  padding: 15px 0px 15px 55px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #212121;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #email-input {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #email-input img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 18px;
+  top: 10px;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #email-input input {
+  position: relative;
+  display: flex;
+  padding: 15px 0px 15px 55px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #212121;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #password-input {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #password-input img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 18px;
+  top: 10px;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #password-input input {
+  position: relative;
+  display: flex;
+  padding: 15px 0px 15px 55px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #212121;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #password-input i {
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  right: 20px;
+  font-size: 20px;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #confirm-password-input {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #confirm-password-input img {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 18px;
+  top: 10px;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #confirm-password-input input {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  padding: 15px 0px 15px 55px;
+  width: 100%;
+  border: none;
+  color: white;
+  background-color: #212121;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #confirm-password-input i {
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  right: 20px;
+  font-size: 20px;
+}
+
+.sign-up-placement .sign-up-box .left #grid-margin #submit-input button {
+  padding: 15px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(130deg, #1277f3 0%, #0b4995 97%);
+  color: white;
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 550;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.sign-up-placement .sign-up-box .right {
+  height: inherit;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+.sign-up-placement .sign-up-box .right .checkout {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  height: 150px;
+  width: 400px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.sign-up-placement .sign-up-box .right .checkout .text1 {
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: cursive;
+}
+
+.sign-up-placement .sign-up-box .right .checkout .text2 {
+  font-size: 1.2rem;
+  font-family: cursive;
+  margin-top: -20px;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  justify-content: center;
+  margin-top: -10px;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #google {
+  height: 40px;
+  width: 30vw;
+  background-color: #212121;
+  border: 1px solid #212121;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' width='24px' height='24px'%3E%3Cpath fill='%23FFC107' d='M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z'/%3E%3Cpath fill='%23FF3D00' d='M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z'/%3E%3Cpath fill='%234CAF50' d='M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z'/%3E%3Cpath fill='%231976D2' d='M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z'/%3E%3C/svg%3E"), auto;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #google p {
+  height: 20px;
+  width: 25vw;
+  font-size: 20px;
+  text-align: center;
+  font-family: sans-serif;
+  color: white;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #google img {
+  height: 25px;
+  width: 25px;
+  margin-left: 15px;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #github {
+  height: 40px;
+  width: 30vw;
+  background-color: #196d31;
+  border: green;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' width='25px' height='25px'%3E%3Cpath fill='%23fff' d='M41,24c0,9.4-7.6,17-17,17S7,33.4,7,24S14.6,7,24,7S41,14.6,41,24z'/%3E%3Cpath fill='%23455a64' d='M21 41v-5.5c0-.3.2-.5.5-.5s.5.2.5.5V41h2v-6.5c0-.3.2-.5.5-.5s.5.2.5.5V41h2v-5.5c0-.3.2-.5.5-.5s.5.2.5.5V41h1.8c.2-.3.2-.6.2-1.1V36c0-2.2-1.9-5.2-4.3-5.2h-2.5c-2.3 0-4.3 3.1-4.3 5.2v3.9c0 .4.1.8.2 1.1L21 41 21 41zM40.1 26.4C40.1 26.4 40.1 26.4 40.1 26.4c0 0-1.3-.4-2.4-.4 0 0-.1 0-.1 0-1.1 0-2.9.3-2.9.3-.1 0-.1 0-.1-.1 0-.1 0-.1.1-.1.1 0 2-.3 3.1-.3 1.1 0 2.4.4 2.5.4.1 0 .1.1.1.2C40.2 26.3 40.2 26.4 40.1 26.4zM39.8 27.2C39.8 27.2 39.8 27.2 39.8 27.2c0 0-1.4-.4-2.6-.4-.9 0-3 .2-3.1.2-.1 0-.1 0-.1-.1 0-.1 0-.1.1-.1.1 0 2.2-.2 3.1-.2 1.3 0 2.6.4 2.6.4.1 0 .1.1.1.2C39.9 27.1 39.9 27.2 39.8 27.2zM7.8 26.4c-.1 0-.1 0-.1-.1 0-.1 0-.1.1-.2.8-.2 2.4-.5 3.3-.5.8 0 3.5.2 3.6.2.1 0 .1.1.1.1 0 .1-.1.1-.1.1 0 0-2.7-.2-3.5-.2C10.1 26 8.6 26.2 7.8 26.4 7.8 26.4 7.8 26.4 7.8 26.4zM8.2 27.9c0 0-.1 0-.1-.1 0-.1 0-.1 0-.2.1 0 1.4-.8 2.9-1 1.3-.2 4 .1 4.2.1.1 0 .1.1.1.1 0 .1-.1.1-.1.1 0 0 0 0 0 0 0 0-2.8-.3-4.1-.1C9.6 27.1 8.2 27.9 8.2 27.9 8.2 27.9 8.2 27.9 8.2 27.9z'/%3E%3Cpath fill='%23455a64' d='M14.2,23.5c0-4.4,4.6-8.5,10.3-8.5c5.7,0,10.3,4,10.3,8.5S31.5,31,24.5,31S14.2,27.9,14.2,23.5z'/%3E%3Cpath fill='%23455a64' d='M28.6 16.3c0 0 1.7-2.3 4.8-2.3 1.2 1.2.4 4.8 0 5.8L28.6 16.3zM20.4 16.3c0 0-1.7-2.3-4.8-2.3-1.2 1.2-.4 4.8 0 5.8L20.4 16.3zM20.1 35.9c0 0-2.3 0-2.8 0-1.2 0-2.3-.5-2.8-1.5-.6-1.1-1.1-2.3-2.6-3.3-.3-.2-.1-.4.4-.4.5.1 1.4.2 2.1 1.1.7.9 1.5 2 2.8 2 1.3 0 2.7 0 3.5-.9L20.1 35.9z'/%3E%3Cpath fill='%2300bcd4' d='M24,4C13,4,4,13,4,24s9,20,20,20s20-9,20-20S35,4,24,4z M24,40c-8.8,0-16-7.2-16-16S15.2,8,24,8 s16,7.2,16,16S32.8,40,24,40z'/%3E%3C/svg%3E"), auto;
+  text-decoration: none;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #github i {
+  font-size: 25px;
+  color: white;
+  margin-left: 15px;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #github p {
+  height: 20px;
+  width: 26vw;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #email {
+  height: 40px;
+  width: 30vw;
+  background-color: red;
+  border: 1px solid darkred;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25px' height='25px' shape-rendering='geometricPrecision' text-rendering='geometricPrecision' image-rendering='optimizeQuality' fill-rule='evenodd' clip-rule='evenodd' viewBox='0 0 497 511.86'%3E%3Cpath fill-rule='nonzero' d='M497 227.28c0 29.39-4.56 56.35-13.58 80.75-9.13 24.51-22.07 43.5-38.62 56.98-16.56 13.47-35.66 20.16-57.2 20.16-17.82 0-32.78-5.41-45.09-16.13-12.2-10.82-19.42-24.62-21.75-41.38h-2.44c-8.28 18.04-20.16 32.15-35.66 42.34-15.38 10.07-33.73 15.17-54.85 15.17-31.09 0-55.39-10.62-72.9-31.83-17.5-21.23-26.21-50.08-26.21-86.59 0-42.23 12.21-76.61 36.61-103.03 24.51-26.42 56.66-39.58 96.45-39.58 14.01 0 30.03 1.28 47.86 3.93 17.82 2.55 33.85 6.16 48.17 10.72l-7.75 146v6.79c0 36.92 13.8 55.39 41.28 55.39 18.89 0 34.27-11.14 46.05-33.43 11.78-22.28 17.72-51.24 17.72-86.89 0-37.57-7.64-70.35-23.03-98.58-15.28-28.22-37.13-49.87-65.47-65.15-28.22-15.17-60.69-22.81-97.4-22.81-46.26 0-86.48 9.55-120.64 28.75-34.17 19.21-60.27 46.59-78.31 82.13-18.04 35.54-27.05 76.61-27.05 123.29 0 63.25 16.65 111.84 50.08 145.9 33.32 33.96 81.38 50.93 144.19 50.93 43.51 0 88.71-8.91 135.5-26.74v41.38c-39.79 17.41-84.89 26.11-135.5 26.11-75.23 0-133.58-20.7-175.18-62.08C20.69 408.51 0 350.68 0 276.41c0-53.9 11.04-101.86 33.21-143.99 22.18-42.01 53.8-74.59 94.86-97.72C169.03 11.57 216.14 0 269.19 0c44.56 0 84.14 9.34 118.95 28.12 34.69 18.78 61.53 45.41 80.42 79.9 19 34.48 28.44 74.27 28.44 119.26zm-321.4 40.75c0 52.62 20.17 78.94 60.59 78.94 42.97 0 66.21-32.47 69.93-97.3l4.45-81.07c-14.96-4.14-31.19-6.26-48.81-6.26-26.95 0-48.06 9.34-63.34 28.02-15.18 18.56-22.82 44.56-22.82 77.67z'/%3E%3C/svg%3E"), auto;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #email i {
+  font-size: 25px;
+  color: white;
+  margin-left: 15px;
+}
+
+.sign-up-placement .sign-up-box .right #gfg-icon #email p {
+  height: 20px;
+  width: 25vw;
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.sign-up-placement .sign-up-box .right .Already-account {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.sign-up-placement .sign-up-box .right .Already-account span a {
+  font-weight: 700;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #0b4995;
+  transition: all 0.3s ease;
+}
+
+.sign-up-placement .sign-up-box .right .Already-account span a:hover {
+  color: #1277f3;
+}
+
+.sign-up-placement .sign-up-box .right .Already-account span a:active {
+  color: green;
+}
+
+.sign-up-placement .sign-up-box .right #create-account {
+  display: flex;
+  justify-content: center;
+  color: gray;
+}
+
+.sign-up-placement .checkout-other {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  bottom: -30px;
+  color: lightgray;
+  display: none;
+}
+
+.sign-up-placement .create-account {
+  position: absolute;
+  bottom: -135px;
+  display: flex;
+  justify-content: center;
+  color: lightgray;
+  display: none;
+}
+
+.sign-up-placement .create-account span a {
+  font-weight: 700;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #0b4995;
+  transition: all 0.3s ease;
+}
+
+.sign-up-placement .create-account span a:hover {
+  color: #1277f3;
+}
+
+.sign-up-placement .create-account span a:active {
+  color: green;
+}
+
+@media screen and (max-width: 1100px) {
+  .sign-up-placement .sign-up-box .left {
+    position: relative;
+    width: 60%;
+  }
+  .sign-up-placement .sign-up-box .left .sign-up-text {
+    width: 20rem;
+    margin-left: 20px;
+  }
+  .sign-up-placement .sign-up-box .left .sign-up-text h1 {
+    color: white;
+  }
+  .sign-up-placement .sign-up-box .right {
+    position: absolute;
+    bottom: -90px;
+    height: 50px;
+    width: auto;
+  }
+  .sign-up-placement .sign-up-box .right .checkout {
+    display: none;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon {
+    display: flex;
+    gap: 1rem;
+    transition: all 0.4s ease;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #google {
+    height: 50px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #google img {
+    margin-left: 0px;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #google p {
+    display: none;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #github {
+    height: 50px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #github i {
+    margin-left: 0;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #github p {
+    display: none;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #email {
+    height: 50px;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #email i {
+    margin-left: 0;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #email p {
+    display: none;
+  }
+  .sign-up-placement .sign-up-box .right .Already-account {
+    display: none;
+  }
+  .sign-up-placement .sign-up-box .right #create-account {
+    display: none;
+  }
+  .sign-up-placement .sign-up-box .checkout-other {
+    display: block;
+  }
+  .sign-up-placement .sign-up-box .create-account {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .sign-up-placement {
+    margin-top: -145px;
+  }
+  .sign-up-placement .sign-up-box .left {
+    position: relative;
+    width: 100%;
+  }
+  .sign-up-placement .sign-up-box .left .sign-up-text {
+    width: 18rem;
+    margin-left: 20px;
+  }
+  .sign-up-placement .sign-up-box .left .sign-up-text h1 {
+    color: white;
+    font-size: 1.8rem;
+  }
+  .sign-up-placement .sign-up-box .left .sign-up-text p {
+    font-size: 1.3rem;
+    margin-top: -10px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin {
+    display: grid;
+    grid-gap: 10px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin input::placeholder {
+    color: grey;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #text-input img {
+    width: 22px;
+    height: 22px;
+    top: 10px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #text-input input {
+    padding: 13px 0px 13px 55px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #email-input img {
+    width: 22px;
+    height: 22px;
+    top: 10px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #email-input input {
+    padding: 13px 0px 13px 55px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #password-input img {
+    width: 22px;
+    height: 22px;
+    top: 10px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #password-input input {
+    padding: 13px 0px 13px 55px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #password-input i {
+    right: 22px;
+    font-size: 18px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #confirm-password-input img {
+    width: 22px;
+    height: 22px;
+    top: 10px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #confirm-password-input input {
+    padding: 13px 0px 13px 55px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #confirm-password-input i {
+    right: 22px;
+    font-size: 18px;
+  }
+  .sign-up-placement .sign-up-box .left #grid-margin #submit-input button {
+    padding: 12px 0px;
+  }
+  .sign-up-placement .sign-up-box .right {
+    bottom: -80px;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #google {
+    height: 40px;
+    width: 50px;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #github {
+    height: 40px;
+    width: 50px;
+  }
+  .sign-up-placement .sign-up-box .right #gfg-icon #email {
+    height: 40px;
+    width: 50px;
+  }
+  .sign-up-placement .sign-up-box .create-account {
+    position: absolute;
+    bottom: -125px;
+    display: flex;
+    justify-content: center;
+    color: lightgray;
+  }
+  .sign-up-placement .sign-up-box .create-account span a {
+    font-weight: 700;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #0b4995;
+    transition: all 0.3s ease;
+  }
+  .sign-up-placement .sign-up-box .create-account span a:hover {
+    color: #1277f3;
+  }
+  .sign-up-placement .sign-up-box .create-account span a:active {
+    color: green;
+  }
+}
