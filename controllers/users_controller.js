@@ -66,3 +66,27 @@ module.exports.destroySession = function (req, res) {
     return res.redirect("/users/sign-in");
   });
 };
+
+//for updating the user profile
+
+module.exports.update = async function (req, res) {
+  try {
+    console.log("User ID from request:", req.user.id);
+    console.log("User ID from parameters:", req.params.id);
+
+    if (req.user.id === req.params.id) {
+      const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+        new: true,
+      });
+      if (!user) {
+        return res.status(404).send("User not found");
+      }
+      res.redirect("back");
+    } else {
+      res.status(401).send("Unauthorized");
+    }
+  } catch (error) {
+    console.log("Error in updating profile:", error);
+    res.status(500).send("Internal Server Error");
+  }
+};
