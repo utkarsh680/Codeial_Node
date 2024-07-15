@@ -11,35 +11,42 @@
     <link rel="stylesheet" href="/css/header.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
-  
+
+    <!-- izitoast -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/izitoast/dist/css/iziToast.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/izitoast/dist/js/iziToast.min.js"></script>
+
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <%- style%>
   </head>
   <body>
-    <%- include('_header')%> <% if(flash.success && flash.success.length > 0) {
-    %>
-    <h5><%= flash.success %></h5>
-    <%}%> <%- body%> <%- include('_footer')%> <%- script%>
+    <%- include('_header')%> <%- body%> <%- include('_footer')%> <%- script%>
     <script>
       <% if (flash.success && flash.success.length > 0) { %>
-        new Noty({
-          theme: 'relax',
-          text: '<%= flash.success %>',
-          type: 'success',
-          layout: 'topCenter',
+        iziToast.show({
+          title: 'Success',
+          message: '<%= flash.success %>',
+          position: 'topCenter',
           timeout: 1000,
-          className: 'custom-notification-class' // Add your custom class here
-        }).show();
+          class: 'custom-notification-class', // Add your custom class here
+          color: 'green', // Success color
+        });
       <% } %>
 
       <% if (flash.error && flash.error.length > 0) { %>
-        new Noty({
-          theme: 'relax',
-          text: '<%= flash.error %>',
-          type: 'error',
-          layout: 'topCenter',
+        iziToast.show({
+          title: 'Error',
+          message: '<%= flash.error %>',
+          position: 'topCenter',
           timeout: 1000,
-          className: 'custom-error-class' // Add your custom class here
-        }).show();
+          class: 'custom-error-class', // Add your custom class here
+          color: 'red', // Error color
+        });
       <% } %>
     </script>
   </body>
