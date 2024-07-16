@@ -1,5 +1,3 @@
-
-
 {
   let createPost = function () {
     let newPostForm = $("#new-post-form");
@@ -23,6 +21,9 @@
           let newPost = newPostDom(data.data.post);
           $("#posts-list-container>ul").prepend(newPost);
           deletePost($(" .delete-post-button", newPost));
+
+          // // Initialize comment creation for the new post
+          // createComment($("#new-comment-form-" + data.data.post._id)); // Assuming you have a form for comments with id `new-comment-form-{post._id}`
         },
         error: function (error) {
           console.log("error in sending data", error.responseText);
@@ -60,6 +61,16 @@
           
             <div class="post-comments-list">
             <ul id="post-comments-${post._id}">
+            <li id="comment-${post.comment._id}">
+        <p>
+            <small>
+              <a href="/comments/destroy/${post.comment._id}" class="delete-comment-button">X</a>
+            </small>
+          ${post.comment.content}
+          <br />
+          <small>${post.comment.user.name}</small>
+        </p>
+      </li>
             </ul>
             </div>
         </div>
@@ -92,6 +103,77 @@
       });
     });
   };
+  // // Method to create a comment
+  // let createComment = function (commentForm) {
+  //   commentForm.submit(function (e) {
+  //     e.preventDefault();
+  //     $.ajax({
+  //       type: "post",
+  //       url: commentForm.attr("action"),
+  //       data: commentForm.serialize(),
+  //       success: function (data) {
+  //         let newComment = newCommentDom(data.data.comment);
+  //         let postId = data.data.comment.post;
+  //         let commentsContainer = $(`#post-comments-${postId}`);
+  //         commentsContainer.prepend(newComment);
+  //         deleteComment($(" .delete-comment-button", newComment)); // Initialize delete for the new comment
+  //       },
+  //       error: function (error) {
+  //         console.log("Error:", error.responseText);
+  //       },
+  //     });
+  //   });
+  // };
+
+  // // Method to create a comment in the DOM
+  // let newCommentDom = function (comment) {
+  //   return $(`
+  //     <li id="comment-${comment._id}">
+  //       <p>
+  //           <small>
+  //             <a href="/comments/destroy/${comment._id}" class="delete-comment-button">X</a>
+  //           </small>
+  //         ${comment.content}
+  //         <br />
+  //         <small>${comment.user.name}</small>
+  //       </p>
+  //     </li>
+  //   `);
+  // };
+  // // Method to delete a comment from the DOM
+  // let deleteComment = function (deleteLink) {
+  //   $(deleteLink).click(function (e) {
+  //     e.preventDefault();
+
+  //     $.ajax({
+  //       type: "get",
+  //       url: $(deleteLink).prop("href"),
+  //       success: function (data) {
+  //         new Noty({
+  //           theme: "relax",
+  //           text: "Comment deleted successfully!",
+  //           type: "success",
+  //           layout: "topCenter",
+  //           timeout: 1000,
+  //           className: "custom-notification-class",
+  //         }).show();
+  //         $(`#comment-${data.data.comment_id}`).remove();
+  //       },
+  //       error: function (error) {
+  //         console.log(error.responseText);
+  //       },
+  //     });
+  //   });
+  // };
+
+  // $(".delete-comment-button").each(function () {
+  //   deleteComment($(this));
+  // });
+
+  // // Initialize comment creation for existing posts
+  // $('form[id^="new-comment-form-"]').each(function () {
+  //   createComment($(this));
+  // });
 
   createPost();
 }
