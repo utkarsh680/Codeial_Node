@@ -16,6 +16,7 @@ const User = require("../models/user");
 module.exports.home = async function (req, res) {
   try {
     const post = await Post.find({})
+      .sort("-createdAt")
       .populate("user")
       .populate({
         path: "comments",
@@ -28,7 +29,7 @@ module.exports.home = async function (req, res) {
     return res.render("home", {
       title: "Codeial | Home",
       posts: post,
-      all_users : users
+      all_users: users,
     });
   } catch (error) {
     console.log("error in sending post data", error);

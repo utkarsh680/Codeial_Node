@@ -8,13 +8,13 @@ module.exports.create = async function (req, res) {
       user: req.user._id,
     });
 
-    if(req.xhr){
+    if (req.xhr) {
       return res.status(200).json({
         data: {
-          post: post
+          post: post,
         },
-        message: 'Post created'
-      })
+        message: "Post created",
+      });
     }
     req.flash("success", "Post published!");
     return res.redirect("back");
@@ -35,6 +35,14 @@ module.exports.destroy = async function (req, res) {
     if (post.user == req.user.id) {
       await post.deleteOne();
       await Comment.deleteMany({ post: postId }).exec();
+      if (req.xhr) {
+        return res.status(200).json({
+          data: {
+            post_id: req.params.id,
+          },
+          message: "Post deleted successfully",
+        });
+      }
       req.flash("success", "Post Deleted successfully!");
 
       return res.redirect("back");

@@ -1,3 +1,5 @@
+
+
 {
   let createPost = function () {
     let newPostForm = $("#new-post-form");
@@ -64,5 +66,32 @@
         </li>
 `);
   };
+
+  //method to delete a post from DOM
+  let deletePost = function (deleteLink) {
+    $(deleteLink).click(function (e) {
+      e.preventDefault();
+
+      $.ajax({
+        type: "get",
+        url: $(deleteLink).prop("href"),
+        success: function (data) {
+          new Noty({
+            theme: "relax",
+            text: "Post deleted successfully!",
+            type: "success",
+            layout: "topCenter",
+            timeout: 1000,
+            className: "custom-notification-class", // Add your custom class here
+          }).show();
+          $(`#post-${data.data.post_id}`).remove();
+        },
+        error: function (error) {
+          console.log(error.responseText);
+        },
+      });
+    });
+  };
+
   createPost();
 }
