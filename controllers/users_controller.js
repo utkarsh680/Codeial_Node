@@ -73,20 +73,38 @@ module.exports.destroySession = function (req, res) {
 
 module.exports.update = async function (req, res) {
   try {
-    if (req.user.id === req.params.id) {
-      const user = await User.findByIdAndUpdate(req.params.id, req.body, {
-        new: true,
-      });
-      if (!user) {
-        req.flash("error", "User not found!");
-        return res.status(404).send("User not found");
-      }
-      req.flash("success", "Profile updated succesfully!");
+    let user = await User.findById(req.params.id);
 
-      res.redirect("back");
-    } else {
-      res.status(401).send("Unauthorized");
-    }
+    User.uploadedAvatar(req, res, function (err) {
+      if (err) {
+        console.log("****Multer Error", err);
+      }
+
+      user.name = req.body.name;
+      user.email = req.body.email;
+
+      if (req.file) {
+        //this is saveing the path of the uploaded file into the avatar field in the user
+        user.avatar = User.avatarPath + "/" + req.file.filename;
+      }
+      user.save();
+      return res.redirect("back");
+    });
+
+    // if (req.user.id === req.params.id) {
+    //   const user = await User.findByIdAndUpdate(req.params.id, req.body, {
+    //     new: true,
+    //   });
+    //   if (!user) {
+    //     req.flash("error", "User not found!");
+    //     return res.status(404).send("User not found");
+    //   }
+    //   req.flash("success", "Profile updated succesfully!");
+
+    //   res.redirect("back");
+    // } else {
+    //   res.status(401).send("Unauthorized");
+    // }
   } catch (error) {
     req.flash("error", "Error in updating profil!");
 
