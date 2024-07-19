@@ -1,25 +1,20 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
-const app = express();
-
-const port = 8000;
-
 const expresLayouts = require("express-ejs-layouts");
-
-// for layout
-app.use(express.static("./assets"));
-const db = require("./config/mongoose");
-
-//use for session cookie
 const session = require("express-session");
 const passport = require("passport");
-const passportLocal = require("./config/passport-local-strategy");
-
 const MongoStore = require("connect-mongo");
-
 const sassMiddleware = require("node-sass-middleware");
 const flash = require("connect-flash");
 const customMware = require("./config/middleware");
+
+const app = express();
+const port = 8000;
+
+const db = require("./config/mongoose");
+const passportLocal = require("./config/passport-local-strategy");
+
+// Middleware for SASS
 app.use(
   sassMiddleware({
     src: "./assets/scss",
@@ -30,26 +25,28 @@ app.use(
   })
 );
 
-app.use(express.urlencoded());
+// Serve static files and uploads
+app.use(express.static("./assets"));
+app.use("/uploads", express.static(__dirname + "/uploads"));
+
+// Parse URL-encoded bodies and cookies
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+// Set up express-ejs-layouts
 app.use(expresLayouts);
-
-//extract style and scripts from sub pages into the layout
 app.set("layout extractStyles", true);
 app.set("layout extractScripts", true);
 
-//set up the view engine
-
+// Set view engine
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-//mongo store is use to use the session cookie in the db
+// Set up session management with MongoStore
 app.use(
   session({
     name: "codeial",
-    //todo change the secret before deployment in production mode
-    secret: "hellohowareyou",
+    secret: "hellohowareyou", // TODO: Change the secret before deployment
     saveUninitialized: false,
     resave: false,
     cookie: {
@@ -67,19 +64,25 @@ app.use(
   })
 );
 
+// Initialize passport and session
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Set authenticated user
 app.use(passport.setAuthenticatedUser);
 
+// Flash messages middleware
 app.use(flash());
 app.use(customMware.setFlash);
-// user express router
+
+// Use express router
 app.use("/", require("./routes"));
+
+// Start server
 app.listen(port, (err) => {
   if (err) {
-    console.log(`error ${err}`);
+    console.log(`Error: ${err}`);
   } else {
-    console.log(`server runnig successfully on port, ${port}`);
+    console.log(`Server running successfully on port ${port}`);
   }
 });

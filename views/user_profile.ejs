@@ -1,31 +1,104 @@
 <link rel="stylesheet" href="/css/user_profile.css" />
-<div>
-  <h1><a href="/">HOME</a></h1>
-</div>
-<h1 class="hello">Codeial / <%= title%></h1>
+<% if (user.id == profile_user.id) { %>
+<div class="user-profile-box">
+  <div class="user-image">
+    <img
+      src="<%= user.avatar %>"
+      alt="<%= user.name %>"
+      width="200"
+      class="profile-image"
+      id="user-avatar"
+    />
+  </div>
 
-<% if(user.id == profile_user.id) { %>
-<!-- if user matches then show the form -->
-<form action="/users/update/<%= profile_user._id %>" enctype="multipart/form-data" method="POST">
-  <input
-    type="text"
-    name="name"
-    placeholder="your name"
-    value="<%= profile_user.name %>"
-    required
-  />
-  <input
-    type="email"
-    name="email"
-    placeholder="your email"
-    value="<%= profile_user.email %>"
-    required
-  />
-  <input type="file" name="avatar" placeholder="profile Picture">
-  <input type="submit" value="update" />
-</form>
-<%}else{%>
-<!-- else show only the profile info -->
-<p><%= profile_user.name %></p>
-<p><%= profile_user.email %></p>
-<% } %>
+  <!-- if user matches then show the form -->
+  <form
+    action="/users/update/<%= profile_user.id %>"
+    enctype="multipart/form-data"
+    method="post"
+    class="profile-form"
+    id="edit-profile-form"
+  >
+    <div class="browse">
+      <input
+        style="margin-top: 30px"
+        type="file"
+        name="avatar"
+        class="filepond"
+        id="profile-file"
+        placeholder="Profile Picture"
+      />
+    </div>
+    <input
+      id="local_user_id"
+      type="hidden"
+      name="id"
+      placeholder="Your id"
+      value="<%= locals.user._id %>"
+    />
+    <div class="input-value">
+      <div id="text-input">
+        <input
+          type="text"
+          name="name"
+          placeholder="your name"
+          id="name-input"
+          value="<%= profile_user.name %>"
+          required
+          autofocus
+        />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
+          alt="email"
+        />
+      </div>
+
+      <div id="email-input">
+        <input
+          type="email"
+          name="email"
+          id="email-input"
+          placeholder="your email"
+          value="<%= profile_user.email %>"
+          required
+          disabled
+        />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/732/732200.png"
+          alt="email"
+        />
+      </div>
+
+      <div id="address-input">
+        <input
+          type="text"
+          name="address"
+          placeholder="dist, state"
+          maxlength="30"
+          id="address-input"
+          h
+          value="<%= profile_user.address %>"
+        />
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/12522/12522360.png"
+          alt="email"
+        />
+      </div>
+      <div id="submit-input">
+        <button id="btnSubmit">Update</button>
+      </div>
+
+      <div class="back-homeButton">
+        <i class="fa-solid fa-arrow-left"></i>
+        <a href="/" class="back">Go back to Home</a>
+      </div>
+    </div>
+  </form>
+  <% } else {%>
+  <!-- else only show the profile info -->
+  <div style="color: white">
+    <p>Name: <%= profile_user.name %></p>
+    <p>Email: <%= profile_user.email %></p>
+  </div>
+  <% } %>
+</div>

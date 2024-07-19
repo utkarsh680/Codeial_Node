@@ -1,4 +1,7 @@
 const User = require("../models/user");
+const fs = require("fs");
+const path = require("path");
+
 module.exports.profile = async function (req, res) {
   try {
     const user = await User.findById(req.params.id);
@@ -73,42 +76,50 @@ module.exports.destroySession = function (req, res) {
 
 module.exports.update = async function (req, res) {
   try {
-    let user = await User.findById(req.params.id);
+    if (req.user.id === req.params.id) {
+      const user = await User.findById(req.params.id);
 
-    User.uploadedAvatar(req, res, function (err) {
-      if (err) {
-        console.log("****Multer Error", err);
-      }
+      User.uploadedAvatar(req, res, function (err) {
+        if (err) {
+          console.log("**MulterError", err);
+        }
+        user.name = req.body.name;
+        console.log("sanam lodu", req.file);
 
-      user.name = req.body.name;
-      user.email = req.body.email;
+        if (req.file) {
+          // Check if the request contains a file (req.file is truthy)
+          if (user.avatar) {
+            // Check if the user already has an avatar path stored
+            const avatarPath = path.join(__dirname, "..", user.avatar);
 
-      if (req.file) {
-        //this is saveing the path of the uploaded file into the avatar field in the user
-        user.avatar = User.avatarPath + "/" + req.file.filename;
-      }
-      user.save();
-      return res.redirect("back");
-    });
+            // Check if the avatar file actually exists before attempting to delete
+            if (fs.existsSync(avatarPath)) {
+              fs.unlinkSync(avatarPath);
+            }
+          }
 
-    // if (req.user.id === req.params.id) {
-    //   const user = await User.findByIdAndUpdate(req.params.id, req.body, {
-    //     new: true,
-    //   });
-    //   if (!user) {
-    //     req.flash("error", "User not found!");
-    //     return res.status(404).send("User not found");
-    //   }
-    //   req.flash("success", "Profile updated succesfully!");
+          // Save the path of the uploaded file into the avatar field in the user object
+          user.avatar = User.avatarPath + "/" + req.file.filename;
+        } else {
+          // Handle the case where no file is present in the request
+          console.error("No file uploaded.");
+        }
 
-    //   res.redirect("back");
-    // } else {
-    //   res.status(401).send("Unauthorized");
-    // }
+        user.save();
+        // return res.status(200).json({
+        //   data : {
+        //     user:user
+        //   },
+        //   message: "Profile updated!"
+        // });
+        return res.redirect("back");
+      });
+    } else {
+      // User is unauthorized
+      return res.status(401).send("Unauthorized");
+    }
   } catch (error) {
-    req.flash("error", "Error in updating profil!");
-
-    console.log("Error in updating profile:", error);
-    res.status(500).send("Internal Server Error");
+    console.error("Error updating user:", error);
+    return res.status(500).send("Internal Server Error");
   }
 };

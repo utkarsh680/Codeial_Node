@@ -20,6 +20,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    address: {
+      type: String,
+      require: true,
+    },
     avatar: {
       type: String,
     },
@@ -38,11 +42,10 @@ let storage = multer.diskStorage({
   },
 });
 
-//static method
+// static functions
 userSchema.statics.uploadedAvatar = multer({ storage: storage }).single(
   "avatar"
 );
-
 userSchema.statics.avatarPath = AVATAR_PATH;
 const user = mongoose.model("User", userSchema);
 
