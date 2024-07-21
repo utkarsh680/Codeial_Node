@@ -1,3 +1,205 @@
-.home-page{
-    color: white;
+#home-container {
+  color: white;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  .box1 {
+    height: 100%;
+    width: 15%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
+    border-right: 2px solid lightgrey;
+    // background-color: red;
+    .user-profile {
+      height: 43%;
+      width: 100%;
+      border-bottom: 1px solid lightgrey;
+      .app-logo {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding-left: 20px;
+
+        .logo {
+          height: 50px;
+          width: 50px;
+        }
+        h3 {
+          color: black;
+          font-size: 30px;
+          font-family: cursive;
+        }
+      }
+      .user-profile-value {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        gap: 1rem;
+        .user-photo {
+          height: 110px;
+          width: 110px;
+          border-radius: 50%;
+          border: 5px solid rgb(188, 188, 242);
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover; /* Adjusted */
+            align-self: center;
+
+            transition: all 0.4s ease;
+          }
+          img:hover {
+            scale: 1.2;
+          }
+        }
+        .user-name {
+          color: black;
+          font-weight: 600;
+        }
+        .user-location {
+          margin-top: -10px;
+          color: grey;
+        }
+      }
+      .count {
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 20px;
+        .posts {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 4px;
+          .post-count {
+            font-weight: 600;
+          }
+          .post-text {
+            color: grey;
+          }
+        }
+        .follower {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 4px;
+
+          .follower-count {
+            font-weight: 600;
+          }
+          .follower-text {
+            color: grey;
+          }
+        }
+        .following {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 4px;
+
+          .following-count {
+            font-weight: 600;
+          }
+          .following-text {
+            color: grey;
+          }
+        }
+      }
+    }
+  }
+  .box2 {
+    height: 100%;
+    width: 70%;
+    top: 0;
+    background-color: rgb(240, 240, 240);
+    .box2-header {
+      height: 14%;
+      width: 100%;
+      top: 0;
+      border-bottom: 1px solid lightgray;
+    }
+  }
+  .box3 {
+    height: 100%;
+    width: 15%;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    border-left: 1px solid lightgrey;
+    .box3-header {
+      height: 14%;
+      width: 100%;
+      top: 0;
+      border-bottom: 1px solid lightgray;
+    }
+  }
+  // #feed-posts {
+  //   width: 80%;
+  //   display: flex;
+  //   align-self: center;
+  //   justify-content: center;
+  //   margin-left: 400px;
+  //   h4 {
+  //     color: white;
+  //   }
+  // }
+  // #posts-list-container {
+  //   color: white;
+
+  //   li {
+  //     height: auto;
+  //     width: 200px;
+
+  //     display: flex;
+  //     flex-direction: column;
+  //     margin-top: 4px;
+  //     .post-content {
+  //       color: rgb(0, 0, 0);
+  //       font-size: 20px;
+  //       font-weight: 600;
+  //       font-family: sans-serif;
+  //     }
+  //     .post-comments {
+  //       margin-top: 20px;
+  //       margin-left: 50px;
+  //       input {
+  //         padding: 10px 12px;
+  //       }
+
+  //     }
+  //   }
+  // }
+  // #user-friends {
+  //   color: white;
+  //   width: 20%;
+  //   height: 75%;
+  //   border-left: 2px solid grey;
+  //   padding: 20px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-self: center;
+
+  // }
 }

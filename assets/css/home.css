@@ -1,3 +1,176 @@
-.home-page {
+#home-container {
   color: white;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#home-container .box1 {
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-right: 2px solid lightgrey;
+}
+
+#home-container .box1 .user-profile {
+  height: 43%;
+  width: 100%;
+  border-bottom: 1px solid lightgrey;
+}
+
+#home-container .box1 .user-profile .app-logo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding-left: 20px;
+}
+
+#home-container .box1 .user-profile .app-logo .logo {
+  height: 50px;
+  width: 50px;
+}
+
+#home-container .box1 .user-profile .app-logo h3 {
+  color: black;
+  font-size: 30px;
+  font-family: cursive;
+}
+
+#home-container .box1 .user-profile .user-profile-value {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 1rem;
+}
+
+#home-container .box1 .user-profile .user-profile-value .user-photo {
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  border: 5px solid #bcbcf2;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-container .box1 .user-profile .user-profile-value .user-photo img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  /* Adjusted */
+  align-self: center;
+  transition: all 0.4s ease;
+}
+
+#home-container .box1 .user-profile .user-profile-value .user-photo img:hover {
+  scale: 1.2;
+}
+
+#home-container .box1 .user-profile .user-profile-value .user-name {
+  color: black;
+  font-weight: 600;
+}
+
+#home-container .box1 .user-profile .user-profile-value .user-location {
+  margin-top: -10px;
+  color: grey;
+}
+
+#home-container .box1 .user-profile .count {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+#home-container .box1 .user-profile .count .posts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#home-container .box1 .user-profile .count .posts .post-count {
+  font-weight: 600;
+}
+
+#home-container .box1 .user-profile .count .posts .post-text {
+  color: grey;
+}
+
+#home-container .box1 .user-profile .count .follower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#home-container .box1 .user-profile .count .follower .follower-count {
+  font-weight: 600;
+}
+
+#home-container .box1 .user-profile .count .follower .follower-text {
+  color: grey;
+}
+
+#home-container .box1 .user-profile .count .following {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#home-container .box1 .user-profile .count .following .following-count {
+  font-weight: 600;
+}
+
+#home-container .box1 .user-profile .count .following .following-text {
+  color: grey;
+}
+
+#home-container .box2 {
+  height: 100%;
+  width: 70%;
+  top: 0;
+  background-color: #f0f0f0;
+}
+
+#home-container .box2 .box2-header {
+  height: 14%;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid lightgray;
+}
+
+#home-container .box3 {
+  height: 100%;
+  width: 15%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-left: 1px solid lightgrey;
+}
+
+#home-container .box3 .box3-header {
+  height: 14%;
+  width: 100%;
+  top: 0;
+  border-bottom: 1px solid lightgray;
 }

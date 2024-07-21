@@ -84,7 +84,7 @@ module.exports.update = async function (req, res) {
           console.log("**MulterError", err);
         }
         user.name = req.body.name;
-        console.log("sanam lodu", req.file);
+        user.address = req.body.address;
 
         if (req.file) {
           // Check if the request contains a file (req.file is truthy)

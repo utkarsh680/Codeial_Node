@@ -1,37 +1,76 @@
 <link rel="stylesheet" href="/css/home.css" />
-<div class="home-page">
-  <h1>Codeial / <%= title%></h1>
 
-  <section id="feed-posts">
-    <h4>Posts</h4>
-    <% if(locals.user){%>
-    <form action="/posts/create" id="new-post-form" method="POST">
-      <textarea
-        name="content"
-        cols="30"
-        rows="3"
-        placeholder="type here......"
-        required
-      ></textarea>
-      <input type="submit" value="Post" />
-    </form>
-    <% } %>
-    <div id="posts-list-container">
-      <ul>
-        <% for(post of posts){ %> <%- include('_post') %> <%} %>
-      </ul>
+<div id="home-container">
+  <div class="box1">
+    <div class="user-profile">
+      <div class="app-logo">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/174/174855.png"
+          alt=""
+          class="logo"
+        />
+        <h3>kilogram</h3>
+      </div>
+      <div class="user-profile-value">
+        <a href="/users/profile/<%= user.id %>"
+          ><div class="user-photo">
+            <img src="<%= user.avatar %>" alt="" width="100" /></div
+        ></a>
+
+        <div class="user-name"><%= user.name %></div>
+        <div class="user-location"><%= user.address %></div>
+      </div>
+      <div class="count">
+        <div class="posts">
+          <div class="post-count">10</div>
+          <div class="post-text">Posts</div>
+        </div>
+        <div class="follower">
+          <div class="follower-count">200</div>
+          <div class="follower-text">Follower</div>
+        </div>
+        <div class="following">
+          <div class="following-count">300</div>
+          <div class="following-text">Following</div>
+        </div>
+      </div>
     </div>
-  </section>
-  <section id="user-friends">
-    <h4>friends</h4>
-    <% for (u of all_users){ %>
-    <p>
-      <a href="/users/profile/<%= u.id%>">
-        <%= u.name %>
-      </a>
-    </p>
-    <%}%>
-  </section>
-</div>
+  </div>
+  <div class="box2">
+    <header class="box2-header"></header>
+    <section id="feed-posts">
+      <div>
+        <h1>home page/ <%= title %></h1>
+        <h4>Posts</h4>
 
+        <form action="/posts/create" id="new-post-form" method="POST">
+          <textarea
+            name="content"
+            id=""
+            cols="30"
+            rows="3"
+            placeholder="type here ...."
+          ></textarea>
+          <input type="submit" value="Post" />
+        </form>
+        <div id="posts-list-container">
+          <ul>
+            <% for(post of posts){ %> <%- include('_post')-%> <%} %>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="user-friends">
+      <h4>friends</h4>
+      <% for(u of all_users) {%>
+      <p>
+        <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+      </p>
+      <%}%>
+    </section>
+  </div>
+  <div class="box3">
+    <header class="box3-header"></header>
+  </div>
+</div>
 <script src="/js/home_posts.js"></script>
