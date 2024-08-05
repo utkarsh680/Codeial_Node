@@ -34,47 +34,41 @@
 
   //method to create a post in DOM
   let newPostDom = function (post) {
-    return $(`<li id="post-${post._id}">
-        <p>
-            <small>
-            <a class="delete-post-button" href="/posts/destroy/${post._id}">X</a>
-            </small>
-            ${post.content}
-            <br />
-            <small><i>${post.user.name}
-        </i></small>
-        </p>
-
-        <div class="post-comments">
-           
-            <form action="/comments/create" method="POST">
-            <input
-                type="text"
-                name="content"
-                required
-                placeholder="typehere to add comment...."
-            />
-            <input type="hidden" name="post" value="${post._id}" />
-            <input type="submit" value="add comment" />
-            </form>
-
+    return $(`
+          <li id="post-${post._id}">
+        <div class="post-content">
           
-            <div class="post-comments-list">
-            <ul id="post-comments-${post._id}">
-            <li id="comment-${post.comment._id}">
-        <p>
-            <small>
-              <a href="/comments/destroy/${post.comment._id}" class="delete-comment-button">X</a>
-            </small>
-          ${post.comment.content}
-          <br />
-          <small>${post.comment.user.name}</small>
-        </p>
-      </li>
-            </ul>
-            </div>
+          <small
+            ><a class="delete-post-button" href="/posts/destroy/${post._id}"
+              >X</a
+            ></small
+          >
+         
         </div>
-        </li>
+        ${post.content}
+        <div class="post-user">
+        ${post.user.name} 
+        </div>
+        <div class="post-comments">
+         
+        <form action="/comments/create" id="new-comment-form" method="POST">
+            <input
+              type="text"
+              name="content"
+              placeholder="Type here to add comment..."
+            />
+            <input type="hidden" name="postId" value="${post._id}" />
+            <input type="submit" value="Add comment" />
+          </form>
+
+          <div id="post-comments-list">
+            <ul id="post-comments-${post._id}">
+            
+  
+            </ul>
+          </div>
+        </div>
+      </li>
 `);
   };
 
@@ -103,7 +97,7 @@
       });
     });
   };
-  // // Method to create a comment
+  // Method to create a comment
   // let createComment = function (commentForm) {
   //   commentForm.submit(function (e) {
   //     e.preventDefault();

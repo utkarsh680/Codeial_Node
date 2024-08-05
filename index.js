@@ -13,7 +13,9 @@ const port = 8000;
 
 const db = require("./config/mongoose");
 const passportLocal = require("./config/passport-local-strategy");
-const passportJWT = require('./config/passport-jwt-strategy')
+const passportJWT = require("./config/passport-jwt-strategy");
+const passportGoogle = require("./config/passport-googleAuth2-strategy");
+const passportGithub = require("./config/passport-github2-strategy");
 
 // Middleware for SASS
 app.use(

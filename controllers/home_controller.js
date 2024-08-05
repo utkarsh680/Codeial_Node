@@ -12,6 +12,9 @@ const User = require("../models/user");
 //   }
 // };
 
+module.exports.redirectToHome = function (request, response) {
+  return response.redirect("/home");
+};
 //populate the user of each post
 module.exports.home = async function (req, res) {
   try {
