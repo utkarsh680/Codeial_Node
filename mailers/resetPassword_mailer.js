@@ -9,15 +9,16 @@ exports.resetPasswordMail = async (email, subject, text, token) => {
         to: email,
         subject: subject,
         text,
-      },
-      (err, info) => {
-        if (err) {
-          console.log("error in sending  mail", err);
-          return;
-        }
-        console.log("message sent", info);
-        return;
       }
+      // },
+      // (err, info) => {
+      //   if (err) {
+      //     console.log("error in sending  mail", err);
+      //     return;
+      //   }
+      //   console.log("message sent", info);
+      //   return;
+      // }
     );
   } catch (err) {
     req.flash("error", " Please try again.");
